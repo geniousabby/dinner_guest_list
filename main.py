@@ -10,7 +10,7 @@ Dinner guest list.
 guest_name = []
 
 
-def add_guest(): # Add guest function
+def add_guest(): # Add guest
     """Add one guest and their name to the list."""
 
     name = input("Enter guest name: ").strip().title()
@@ -18,23 +18,23 @@ def add_guest(): # Add guest function
     guest_name.append(name)
 
 
-# Modify guest function
+# Modify guest
 
 
-# Remove guest function
+# Remove guest
 
 
-# Sort guests function
+# Sort guests
 
 
-# Show number of guests function
+# Show number of guests
 
 
-# Show invitations function
+# Show invitations
 
 
-# Duplicate checker function
+# Duplicate checker
 
 
-# Main function
+# Main
 
