@@ -64,6 +64,15 @@ def guest_number(): # Show number of guests
 def show_invitations(): # Show invitations
     """Show each invitation for everyone on the list."""
 
+    # If guest name is empty
+    if not guest_name:
+        print("No guest in the list.")
+        return
+    
+    # Loop through names and print guest list
+    print("\nGuest Invitation List:")
+    for i in range(len(guest_name)):
+        print(guest_name)
 
 def check_duplicates():  # Duplicate checker
     """Check the list for duplicate names"""
