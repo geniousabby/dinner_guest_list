@@ -28,7 +28,7 @@ def modify_guest(): # Modify guest
     # Search for guest name and ask for new name
     if name in guest_name:
         index = guest_name.index(name) # Gets index of entered name
-        new_guest = int(input("Enter new name: ").strip().title)
+        new_guest = str(input("Enter new name: ").strip().title)
         guest_name[index] = new_guest
         print("Guest updated.")
         
@@ -39,6 +39,18 @@ def modify_guest(): # Modify guest
 
 def remove_guest(): # Remove guest
     """Removes selected guest from the list"""
+
+    # Ask for name to remove
+    name = input("Enter a guests name to remove: ").strip().title()
+
+    # Search for guest in list
+    if name in guest_name:
+        index = guest_name.index(name)
+        guest_name.pop(index) # Get rid of that guest
+
+    # If input not a name in guest list
+    else:
+        print("Guest not found.")
 
 
 def sort_guests(): # Sort guests
@@ -114,6 +126,5 @@ def main(): # Main
 
 
 # Run main function
-
 if __name__ == "__main__":
     main()
