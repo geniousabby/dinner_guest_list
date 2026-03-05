@@ -7,6 +7,7 @@ Dinner guest list.
 
 """
 
+# List
 guest_name = []
 
 
@@ -19,28 +20,34 @@ def add_guest(): # Add guest
 
 
 def modify_guest(): # Modify guest
+    """Modify a guest, ex. rename"""
 
 
 def remove_guest(): # Remove guest
+    """Removes selected guest from the list"""
 
 
 def sort_guests(): # Sort guests
+    """Sort guests by alphabetical or numerical order, option given to user"""
 
 
 def guest_number(): # Show number of guests
+    """Show the total number of guests on the list"""
 
 
 def show_invitations(): # Show invitations
+    """Show each invitation for everyone on the list."""
 
 
 def check_duplicates():  # Duplicate checker
+    """Check the list for duplicate names"""
 
 
 def main(): # Main
     """Main function that calls all the other functions."""
 
     # Welcome user to course
-    print("Welcome to Guest List Creator")
+    print("Welcome to Guest List Creator!")
 
     while True:
         # Options
@@ -88,9 +95,11 @@ def main(): # Main
             break
 
         else:
-            # everything thats not 1-7
+            # everything thats not 0-7
             print("Please enter your choice.")
 
+
+# Run main function
 
 if __name__ == "__main__":
     main()
