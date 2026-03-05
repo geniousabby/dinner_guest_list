@@ -22,6 +22,20 @@ def add_guest(): # Add guest
 def modify_guest(): # Modify guest
     """Modify a guest, ex. rename"""
 
+    # Ask which guest
+    name = input("Enter guest to update: ").strip().title()
+
+    # Search for guest name and ask for new name
+    if name in guest_name:
+        index = guest_name.index(name) # Gets index of entered name
+        new_guest = int(input("Enter new name: ").strip().title)
+        guest_name[index] = new_guest
+        print("Guest updated.")
+        
+    # If entered name not in guest list
+    else:
+        print("Guest not found.")
+
 
 def remove_guest(): # Remove guest
     """Removes selected guest from the list"""
@@ -61,7 +75,7 @@ def main(): # Main
         print("0- Exit")
 
         # Get input
-        choice = input("Please enter your choice")
+        choice = input("Please enter your choice:")
 
         if choice == "1":
             # Add a guest to the list
