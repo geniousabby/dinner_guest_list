@@ -18,23 +18,75 @@ def add_guest(): # Add guest
     guest_name.append(name)
 
 
-# Modify guest
+def modify_guest(): # Modify guest
 
 
-# Remove guest
+def remove_guest(): # Remove guest
 
 
-# Sort guests
+def sort_guests(): # Sort guests
 
 
-# Show number of guests
+def guest_number(): # Show number of guests
 
 
-# Show invitations
+def show_invitations(): # Show invitations
 
 
-# Duplicate checker
+def check_duplicates():  # Duplicate checker
 
 
-# Main
+def main(): # Main
+    """Main function that calls all the other functions."""
 
+    # Welcome user to course
+    print("Welcome to Guest List Creator")
+
+    while True:
+        # Options
+        print("\n1- Add Guest")
+        print("2- Modify Guest")
+        print("3- Remove Guest")
+        print("4- Sort Guests")
+        print("5- Show Number of Guests")
+        print("6- Show Invitations")
+        print("7- Check for Duplicates")
+
+        # Get input
+        choice = input("Please enter your choice")
+
+        if choice == "1":
+            # Add a guest to the list
+            add_guest()
+
+        elif choice == "2":
+            # Modify a guest, ex. rename
+            modify_guest()
+
+        elif choice == "3":
+            # Remove guest from the list
+            remove_guest()
+
+        elif choice == "4":
+            # Sort guests by alphabetical or numerical order.
+            sort_guests()
+
+        elif choice == "5":
+            # Show the total number of guests
+            guest_number()
+
+        elif choice == "6":
+            # Show each invitation for everyone on the list.
+            show_invitations()
+
+        elif choice == "7":
+            # Check the list for duplicate names
+            check_duplicates()
+
+        else:
+            # everything thats not 1-7
+            print("Please enter your choice.")
+
+
+if __name__ == "__main__":
+    main()
