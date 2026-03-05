@@ -51,6 +51,7 @@ def main(): # Main
         print("5- Show Number of Guests")
         print("6- Show Invitations")
         print("7- Check for Duplicates")
+        print("0- Exit")
 
         # Get input
         choice = input("Please enter your choice")
@@ -82,6 +83,9 @@ def main(): # Main
         elif choice == "7":
             # Check the list for duplicate names
             check_duplicates()
+
+        elif choice == "0":
+            break
 
         else:
             # everything thats not 1-7
