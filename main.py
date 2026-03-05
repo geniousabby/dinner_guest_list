@@ -68,6 +68,20 @@ def show_invitations(): # Show invitations
 def check_duplicates():  # Duplicate checker
     """Check the list for duplicate names"""
 
+    # Get name
+    name = input("Please enter a name to see if it's in the list already: ").strip().title()
+
+    # Find name
+    if name in guest_name:
+        print("That name is already in the list.")
+
+    # If name not in list
+    elif name not in guest_name:
+        print("That name is not in the list.")
+
+    # If name not entered
+    else:
+        print("Please enter a valid name.")
 
 def main(): # Main
     """Main function that calls all the other functions."""
