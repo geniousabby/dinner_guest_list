@@ -72,7 +72,7 @@ def show_invitations(): # Show invitations
     # Loop through names and print guest list
     print("\nGuest Invitation List:")
     for i in range(len(guest_name)):
-        print(guest_name)
+        print(f"{guest_name[i]}, you are invited to my dinner party!")
 
 def check_duplicates():  # Duplicate checker
     """Check the list for duplicate names"""
@@ -110,7 +110,7 @@ def main(): # Main
         print("0- Exit")
 
         # Get input
-        choice = input("Please enter your choice:")
+        choice = input("Please enter your choice: ")
 
         if choice == "1":
             # Add a guest to the list
