@@ -14,20 +14,22 @@ guest_name = []
 def add_guest(): # Add guest
     """Add one guest and their name to the list."""
 
+    # Get user input
     name = input("Enter guest name: ").strip().title()
 
+    # Add entered name to guest list
     guest_name.append(name)
 
 
 def modify_guest(): # Modify guest
-    """Modify a guest, ex. rename"""
+    """Rename a guest."""
 
     # Ask which guest
-    name = input("Enter guest to update: ").strip().title()
+    name = input("Enter the guest name to update: ").strip().title()
 
     # Search for guest name and ask for new name
     if name in guest_name:
-        index = guest_name.index(name) # Gets index of entered name
+        index = guest_name.index(name)
         new_guest = str(input("Enter new name: ").strip().title)
         guest_name[index] = new_guest
         print("Guest updated.")
@@ -38,10 +40,10 @@ def modify_guest(): # Modify guest
 
 
 def remove_guest(): # Remove guest
-    """Removes selected guest from the list"""
+    """Removes selected guest from the list."""
 
     # Ask for name to remove
-    name = input("Enter a guests name to remove: ").strip().title()
+    name = input("Enter a name to remove: ").strip().title()
 
     # Search for guest in list
     if name in guest_name:
@@ -54,26 +56,36 @@ def remove_guest(): # Remove guest
 
 
 def sort_guests(): # Sort guests
-    """Sort guests by alphabetical or numerical order, option given to user"""
+    """Sort guests by alphabetical or numerical order, option given to user."""
+
+    # Get user input
     sort = input("Would you like to sort the guests by numerical or alphabetical order? (n or a): ").strip().lower()
 
+    # If user entered "n"
     if sort == "n":
         print("Here are the guests sorted by date added:")
         for name in guest_name:
             print(name)
 
+    # If user entered "a"
     elif sort == "a":
         print("Here are the guests sorted alphabetically:")
         for name in sorted(guest_name):
             print(name)
 
+    # If there are no names in the list
+    elif not guest_name: # If there are no guests in the list
+        print("No guests in the list")
+        return
+
+    # Anything else
     else:
         print("Invalid choice. Please enter 'n' or 'a'.")
 
 
 def guest_number(): # Show number of guests
-    """Show the total number of guests on the list"""
-
+    """Show the total number of guests on the list."""
+    
 
 def show_invitations(): # Show invitations
     """Show each invitation for everyone on the list."""
@@ -83,13 +95,14 @@ def show_invitations(): # Show invitations
         print("No guest in the list.")
         return
     
-    # Loop through names and print guest list
+    # Sort through names and print guest list
     print("\nGuest Invitation List:")
     for i in range(len(guest_name)):
         print(f"{guest_name[i]}, you are invited to my dinner party!")
 
+
 def check_duplicates():  # Duplicate checker
-    """Check the list for duplicate names"""
+    """Check the list for duplicate names."""
 
     # Get name
     name = input("Please enter a name to see if it's in the list already: ").strip().title()
@@ -105,6 +118,7 @@ def check_duplicates():  # Duplicate checker
     # If name not entered
     else:
         print("Please enter a valid name.")
+
 
 def main(): # Main
     """Main function that calls all the other functions."""
@@ -155,6 +169,8 @@ def main(): # Main
             check_duplicates()
 
         elif choice == "0":
+            # Exit game
+            print("Thanks for playing!")
             break
 
         else:
