@@ -33,7 +33,7 @@ def modify_guest(): # Modify guest
         new_guest = str(input("Enter new name: ").strip().title)
         guest_name[index] = new_guest
         print("Guest updated.")
-        
+
     # If entered name not in guest list
     else:
         print("Guest not found.")
@@ -59,6 +59,7 @@ def sort_guests(): # Sort guests
     """Sort guests by alphabetical or numerical order, option given to user."""
 
     # Get user input
+
     sort = input("Would you like to sort the guests by numerical or alphabetical order? (n or a): ").strip().lower()
 
     # If user entered "n"
@@ -85,7 +86,9 @@ def sort_guests(): # Sort guests
 
 def guest_number(): # Show number of guests
     """Show the total number of guests on the list."""
-    
+
+    print(f"Total guests: {len(guest_name)}")
+
 
 def show_invitations(): # Show invitations
     """Show each invitation for everyone on the list."""
@@ -94,7 +97,7 @@ def show_invitations(): # Show invitations
     if not guest_name:
         print("No guest in the list.")
         return
-    
+
     # Sort through names and print guest list
     print("\nGuest Invitation List:")
     for i in range(len(guest_name)):
@@ -181,3 +184,4 @@ def main(): # Main
 # Run main function
 if __name__ == "__main__":
     main()
+    
