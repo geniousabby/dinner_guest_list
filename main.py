@@ -7,12 +7,12 @@ Dinner guest list.
 
 """
 
-# List
+# Create empty list
 guest_name = []
 
 
 def add_guest(): # Add guest
-    """Add one guest and their name to the list."""
+    """Add one guest name to the list."""
 
     # Get user input
     name = input("Enter guest name: ").strip().title()
@@ -21,8 +21,8 @@ def add_guest(): # Add guest
     guest_name.append(name)
 
 
-def modify_guest(): # Modify guest
-    """Rename a guest."""
+def modify_guest(): # Rename guest
+    """Rename a guest that has already been added."""
 
     # Ask which guest
     name = input("Enter the guest name to update: ").strip().title()
@@ -30,8 +30,8 @@ def modify_guest(): # Modify guest
     # Search for guest name and ask for new name
     if name in guest_name:
         index = guest_name.index(name)
-        new_guest = str(input("Enter new name: ").strip().title)
-        guest_name[index] = new_guest
+        new_name = str(input("Enter new name: ").strip().title)
+        guest_name[index] = new_name
         print("Guest updated.")
 
     # If entered name not in guest list
@@ -49,6 +49,7 @@ def remove_guest(): # Remove guest
     if name in guest_name:
         index = guest_name.index(name)
         guest_name.pop(index) # Get rid of that guest
+        print("Guest removed.")
 
     # If input not a name in guest list
     else:
@@ -59,8 +60,9 @@ def sort_guests(): # Sort guests
     """Sort guests by alphabetical or numerical order, option given to user."""
 
     # Get user input
-
-    sort = input("Would you like to sort the guests by numerical or alphabetical order? (n or a): ").strip().lower()
+    sort = input(
+        "Would you like to sort the guests by numerical or alphabetical order? (n or a): "
+        ).strip().lower()
 
     # If user entered "n"
     if sort == "n":
@@ -77,7 +79,6 @@ def sort_guests(): # Sort guests
     # If there are no names in the list
     elif not guest_name: # If there are no guests in the list
         print("No guests in the list")
-        return
 
     # Anything else
     else:
@@ -123,12 +124,13 @@ def check_duplicates():  # Duplicate checker
         print("Please enter a valid name.")
 
 
-def main(): # Main
+def main(): # Main function
     """Main function that calls all the other functions."""
 
     # Welcome user to course
     print("Welcome to Guest List Creator!")
 
+    # Choices loop
     while True:
         # Options
         print("\n1- Add Guest")
@@ -178,10 +180,9 @@ def main(): # Main
 
         else:
             # everything thats not 0-7
-            print("Please enter your choice.")
+            print("Please enter a valid choice.")
 
 
 # Run main function
 if __name__ == "__main__":
     main()
-    
