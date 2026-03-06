@@ -55,6 +55,20 @@ def remove_guest(): # Remove guest
 
 def sort_guests(): # Sort guests
     """Sort guests by alphabetical or numerical order, option given to user"""
+    sort = input("Would you like to sort the guests by numerical or alphabetical order? (n or a): ").strip().lower()
+
+    if sort == "n":
+        print("Here are the guests sorted by date added:")
+        for name in guest_name:
+            print(name)
+
+    elif sort == "a":
+        print("Here are the guests sorted alphabetically:")
+        for name in sorted(guest_name):
+            print(name)
+
+    else:
+        print("Invalid choice. Please enter 'n' or 'a'.")
 
 
 def guest_number(): # Show number of guests
