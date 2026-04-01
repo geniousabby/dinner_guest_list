@@ -31,7 +31,7 @@ def modify_guest(): # Rename guest
     # Search for guest name and ask for new name
     if name in guest_name:
         index = guest_name.index(name)
-        new_name = str(input("Enter new name: ").strip().title)
+        new_name = str(input("Enter new name: ").strip().title())
         guest_name[index] = new_name
         print("Guest updated.")
 
