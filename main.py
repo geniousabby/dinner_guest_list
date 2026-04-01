@@ -7,7 +7,7 @@ Dinner guest list.
 
 """
 
-# Create empty list
+# Create empty list for guest names
 guest_name = []
 
 
@@ -18,13 +18,14 @@ def add_guest(): # Add guest
     name = input("Enter guest name: ").strip().title()
 
     # Add entered name to guest list
-    guest_name.append(name)
+    guest_name.append(name) # Append adds the name to the end of the list
+    print("Guest added.")
 
 
 def modify_guest(): # Rename guest
     """Rename a guest that has already been added."""
 
-    # Ask which guest
+    # Ask which guest to update
     name = input("Enter the guest name to update: ").strip().title()
 
     # Search for guest name and ask for new name
@@ -45,10 +46,10 @@ def remove_guest(): # Remove guest
     # Ask for name to remove
     name = input("Enter a name to remove: ").strip().title()
 
-    # Search for guest in list
+    # Search for name in list
     if name in guest_name:
         index = guest_name.index(name)
-        guest_name.pop(index) # Get rid of that guest
+        guest_name.pop(index) # Remove guest from index using "pop"
         print("Guest removed.")
 
     # If input not a name in guest list
@@ -88,7 +89,7 @@ def sort_guests(): # Sort guests
 def guest_number(): # Show number of guests
     """Show the total number of guests on the list."""
 
-    print(f"Total guests: {len(guest_name)}")
+    print(f"Total guests: {len(guest_name)}") # Len counts the number of guests in the list
 
 
 def show_invitations(): # Show invitations
@@ -101,17 +102,17 @@ def show_invitations(): # Show invitations
 
     # Sort through names and print guest list
     print("\nGuest Invitation List:")
-    for i in range(len(guest_name)):
+    for i in range(len(guest_name)): # Loop through the list of guest names using their index
         print(f"{guest_name[i]}, you are invited to my dinner party!")
 
 
 def check_duplicates():  # Duplicate checker
     """Check the list for duplicate names."""
 
-    # Get name
+    # Get name to check for duplicates
     name = input("Please enter a name to see if it's in the list already: ").strip().title()
 
-    # Find name
+    # Find name in list
     if name in guest_name:
         print("That name is already in the list.")
 
@@ -127,7 +128,7 @@ def check_duplicates():  # Duplicate checker
 def main(): # Main function
     """Main function that calls all the other functions."""
 
-    # Welcome user to course
+    # Welcome user to course and show options
     print("Welcome to Guest List Creator!")
 
     # Choices loop
@@ -179,7 +180,7 @@ def main(): # Main function
             break
 
         else:
-            # everything thats not 0-7
+            # Everything thats not 0-7
             print("Please enter a valid choice.")
 
 
